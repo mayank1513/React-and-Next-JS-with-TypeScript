@@ -1,0 +1,1 @@
+export { NextJSCourseLayout } from './NextJSCourseLayout'
