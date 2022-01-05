@@ -8,15 +8,12 @@ class TodoApp extends React.Component {
                 <h2>To dos</h2>
                 <ul>
                     {
-                        // line comment
-                        /**
-                         * Hey I want to document something
-                         */
-                        /*
-                         
-                        */
+                        [
+                            tasks.map((task, ind) => <li key={task.task + ind}>
+                                {task.task}
+                            </li>)
+                        ]
                     }
-                    <li>{tasks[0].task}</li>
                 </ul>
                 <h2>Completed</h2>
                 <ul>
