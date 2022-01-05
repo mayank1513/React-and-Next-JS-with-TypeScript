@@ -1,4 +1,10 @@
-export const tasks = [
+type taskType = {
+    task: string,
+    details: string,
+    completed: boolean
+}
+
+export const tasks: taskType[] = [
     {
         task: 'Task 1',
         details: '',
