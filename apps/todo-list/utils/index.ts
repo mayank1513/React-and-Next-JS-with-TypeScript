@@ -14,5 +14,10 @@ export const tasks: taskType[] = [
         task: 'Task 2',
         details: '',
         completed: false
+    },
+    {
+        task: 'Task 3',
+        details: '',
+        completed: false
     }
 ]
