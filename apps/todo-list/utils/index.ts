@@ -7,17 +7,17 @@ type taskType = {
 export const tasks: taskType[] = [
     {
         task: 'Task 1',
-        details: '',
+        details: 'Task 1 details',
         completed: false
     },
     {
         task: 'Task 2',
-        details: '',
-        completed: false
+        details: 'Task 2 details',
+        completed: true
     },
     {
         task: 'Task 3',
-        details: '',
+        details: 'Task 3 details',
         completed: false
     }
 ]

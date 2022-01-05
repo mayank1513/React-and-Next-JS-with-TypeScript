@@ -8,16 +8,26 @@ class TodoApp extends React.Component {
                 <h2>To dos</h2>
                 <ul>
                     {
-                        [
-                            tasks.map((task, ind) => <li key={task.task + ind}>
-                                {task.task}
-                            </li>)
-                        ]
+                        tasks.map(
+                            (task, ind) => (!task.completed &&
+                                <li key={task.task + ind}>
+                                    {task.task}
+                                </li>)
+                        )
+
                     }
                 </ul>
                 <h2>Completed</h2>
                 <ul>
-                    <li>This task is completed</li>
+                    {
+                        tasks.map(
+                            (task, ind) => (task.completed &&
+                                <li key={task.task + ind}>
+                                    {task.task}
+                                </li>)
+                        )
+
+                    }
                 </ul>
             </main>
         )
