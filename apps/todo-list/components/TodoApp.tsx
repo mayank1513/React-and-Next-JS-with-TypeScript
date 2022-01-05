@@ -1,5 +1,5 @@
 import React from "react";
-
+import { tasks } from "../utils";
 class TodoApp extends React.Component {
     render(): React.ReactNode {
         return (
@@ -7,7 +7,16 @@ class TodoApp extends React.Component {
                 <h1>Todo App</h1>
                 <h2>To dos</h2>
                 <ul>
-                    <li>Task 1</li>
+                    {
+                        // line comment
+                        /**
+                         * Hey I want to document something
+                         */
+                        /*
+                         
+                        */
+                    }
+                    <li>{tasks[0].task}</li>
                 </ul>
                 <h2>Completed</h2>
                 <ul>
