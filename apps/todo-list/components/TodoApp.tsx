@@ -1,34 +1,12 @@
 import React from "react";
 import { tasks } from "../utils";
+import TodoList from "./TodoList";
 class TodoApp extends React.Component {
     render(): React.ReactNode {
         return (
             <main>
-                <h1>Todo App</h1>
-                <h2>To dos</h2>
-                <ul>
-                    {
-                        tasks.map(
-                            (task, ind) => (!task.completed &&
-                                <li key={task.task + ind}>
-                                    {task.task}
-                                </li>)
-                        )
-
-                    }
-                </ul>
-                <h2>Completed</h2>
-                <ul>
-                    {
-                        tasks.map(
-                            (task, ind) => (task.completed &&
-                                <li key={task.task + ind}>
-                                    {task.task}
-                                </li>)
-                        )
-
-                    }
-                </ul>
+                <TodoList title="To dos" tasks={tasks.filter(task => !task.completed)} />
+                <TodoList title="Completed" tasks={tasks.filter(task => task.completed)} />
             </main>
         )
     }
