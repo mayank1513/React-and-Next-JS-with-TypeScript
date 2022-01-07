@@ -9,7 +9,7 @@ class TodoList extends React.Component<Props> {
         return (
             <>
                 <h2>{this.props.title}</h2>
-                <ul>
+                <ul style={{ listStyle: 'none' }}>
                     {
                         this.props.tasks.map(
                             task => <TodoListItem updateTasks={this.props.updateTasks} key={task.task} task={task} />

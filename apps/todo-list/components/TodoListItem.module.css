@@ -1,0 +1,33 @@
+.completed {
+    text-decoration: line-through;
+}
+
+.taskItem {
+    display: flex;
+    align-items: top;
+}
+
+.taskItem details {
+    flex-grow: 1;
+    margin: 15px;
+}
+
+.taskItem input {
+    margin: 18px;
+}
+
+.taskItem details>summary {
+    list-style: none;
+}
+
+.taskItem summary::-webkit-details-marker {
+    display: none
+}
+
+.taskItem summary::after {
+    content: '   ▼';
+}
+
+.taskItem details[open] summary:after {
+    content: "   ▲";
+}
