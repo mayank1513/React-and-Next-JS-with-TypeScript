@@ -1,0 +1,27 @@
+.container {
+  max-width: 900px;
+  margin: auto;
+  margin-top: 50px;
+  form {
+    box-shadow: 0 0 5px #5555;
+    border-radius: 30px;
+    padding: 5px 7px;
+    display: flex;
+    align-items: center;
+    input {
+      flex-grow: 1;
+      padding: 0.2em 1em;
+      font-size: 1.4em;
+      background: transparent;
+      border: none;
+      outline: none;
+    }
+    button {
+      margin: 0;
+    }
+  }
+  .err {
+    color: red;
+    margin: 3px 24px;
+  }
+}

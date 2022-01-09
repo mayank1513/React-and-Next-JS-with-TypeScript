@@ -1,4 +1,8 @@
 .todo-list {
-    max-width: 800px;
-    margin: auto;
+  max-width: 800px;
+  margin: auto;
+}
+
+.todo-list ul {
+  padding: 0;
 }
