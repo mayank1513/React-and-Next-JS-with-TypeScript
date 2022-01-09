@@ -4,6 +4,8 @@ import TodoList from "./TodoList";
 import { taskType } from "../utils";
 import styles from "./TodoApp.module.css";
 import UserInput from "./UserInput";
+
+const TaskKey = "tasks"
 class TodoApp extends React.Component {
     state: Readonly<{ tasks: taskType[] }> = { tasks };
     constructor(props) {
@@ -12,6 +14,7 @@ class TodoApp extends React.Component {
     }
     updateTasks = () => {
         this.setState({ tasks: [...this.state.tasks] })
+        localStorage.setItem(TaskKey, JSON.stringify(this.state));
     }
     addTask = (task: string) => {
         const newTask: taskType = {
@@ -19,7 +22,9 @@ class TodoApp extends React.Component {
             completed: false,
             details: ''
         }
-        this.setState({ tasks: [...this.state.tasks, newTask] })
+        const newState = { tasks: [...this.state.tasks, newTask] };
+        this.setState(newState)
+        localStorage.setItem(TaskKey, JSON.stringify(newState));
     }
     render(): React.ReactNode {
         return (
@@ -29,6 +34,10 @@ class TodoApp extends React.Component {
                 <TodoList updateTasks={this.updateTasks} title="Completed Tasks" tasks={this.state.tasks.filter(task => task.completed)} />
             </main>
         )
+    }
+    componentDidMount(): void {
+        const tasks1 = localStorage.getItem(TaskKey)
+        this.setState(tasks1 ? JSON.parse(tasks1) : tasks)
     }
 }
 
