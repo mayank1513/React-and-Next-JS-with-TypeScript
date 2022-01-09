@@ -1,33 +1,38 @@
 .completed {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 .taskItem {
-    display: flex;
-    align-items: top;
+  display: flex;
+  align-items: top;
+  margin: 10px 0;
 }
 
 .taskItem details {
-    flex-grow: 1;
-    margin: 15px;
+  flex-grow: 1;
+  margin: 15px;
 }
 
 .taskItem input {
-    margin: 18px;
+  margin: 18px;
+  height: fit-content;
 }
 
-.taskItem details>summary {
-    list-style: none;
+.taskItem details > summary {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
 }
 
 .taskItem summary::-webkit-details-marker {
-    display: none
+  display: none;
 }
 
 .taskItem summary::after {
-    content: '   ▼';
+  content: "   ▼";
 }
 
 .taskItem details[open] summary:after {
-    content: "   ▲";
+  content: "   ▲";
 }
