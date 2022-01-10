@@ -6,27 +6,25 @@ import styles from '../styles/Home.module.scss'
 import { defaultProfiles } from '../utils'
 import { profileType } from '../utils'
 
-import { useState, useEffect } from 'react'
+import { useState, useContext, createContext } from 'react'
+
+type GlobalProfileContextTypes = [profileType[], (p: profileType[]) => void]
+
+const ProfilesContext = createContext<GlobalProfileContextTypes>([defaultProfiles, (p: profileType[]) => { }])
+
+export const useProfileContext = () => useContext(ProfilesContext);
 
 const Home: NextPage = () => {
   const [profiles, setProfiles] = useState(defaultProfiles);
 
-  function addCard(newProfile: profileType) {
-    setProfiles([...profiles, newProfile]);
-  }
-
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setProfiles([...profiles, defaultProfiles[0]])
-  //   }, 500);
-  // }, [])
-
   return (
-    <div>
-      <Header />
-      <UserInput addCard={addCard} />
-      <CardList profiles={profiles} />
-    </div>
+    <ProfilesContext.Provider value={[profiles, setProfiles]}>
+      <div>
+        <Header />
+        <UserInput />
+        <CardList />
+      </div>
+    </ProfilesContext.Provider>
   )
 }
 
