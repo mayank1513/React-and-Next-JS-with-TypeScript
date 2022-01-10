@@ -1,9 +1,11 @@
 import styles from './UserInput.module.scss'
 import { profileType } from '../utils';
 import { useRef, useState } from 'react';
+import { useProfileContext } from '../pages';
 
-export default function UserInput({ addCard }: { addCard(newCard: profileType): void }) {
+export default function UserInput() {
     // const [state, setstate] = useState(initialState)
+    const [profiles, setProfiles] = useProfileContext();
     const myRef = useRef<HTMLInputElement>(null);
     const [err, setErr] = useState('');
     return (
@@ -11,13 +13,20 @@ export default function UserInput({ addCard }: { addCard(newCard: profileType): 
             <form onSubmit={e => {
                 e.preventDefault();
                 const el = myRef.current as HTMLInputElement
-                fetch(`https://api.github.com/users/${el.value}`)
+                const val = el.value.trim();
+
+                if (profiles.map(p => p.login).includes(val)) {
+                    setErr('Profile already exists');
+                    return;
+                }
+
+                fetch(`https://api.github.com/users/${val}`)
                     .then(res => res.json())
                     .then(data => {
                         const { name, login, avatar_url, blog, bio, public_gists, public_repos } = data;
 
                         if (login) {
-                            addCard({ name, login, avatar_url, blog, bio, public_gists, public_repos });
+                            setProfiles([...profiles, { name, login, avatar_url, blog, bio, public_gists, public_repos }]);
                             setErr('')
                         }
                         else setErr('Profile not found')
