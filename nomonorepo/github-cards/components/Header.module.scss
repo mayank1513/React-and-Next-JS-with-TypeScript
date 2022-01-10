@@ -1,0 +1,45 @@
+.header {
+    box-shadow: 0 0 2px #aaaa;
+    padding: 10px;
+    &>div {
+        display: flex;
+        align-items: center;
+        max-width: 1000px;
+        margin: auto;
+        button {
+            position: relative;
+            display: flex;
+            height: 50px;
+            padding: 0 30px;
+            font-size: 1.5em;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            overflow: hidden;
+            background: blue;
+            color: white;
+        }
+        button:before {
+            content: " ";
+            position: absolute;
+            background: white;
+            height: 110%;
+            width: 110%;
+            left: -5%;
+            top: -5%;
+            transition: all .5s;
+            z-index: 100;
+            transform: translateX(-100%);
+        }
+        button:hover {
+            outline: none;
+            border: none;
+        }
+        button:hover:before {
+            transform: translateX(0);
+            opacity: 0;
+        }
+    }
+}

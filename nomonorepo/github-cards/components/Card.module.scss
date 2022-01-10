@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 50px;
+    box-shadow: 0 0 2px 5px #5555;
+    &>div {
+        padding: 10px;
+    }
+    img {
+        max-width: 160px;
+    }
+    a,
+    code {
+        margin-right: 20px;
+    }
+}
