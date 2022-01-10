@@ -1,7 +1,14 @@
+import styles from './UserInput.module.scss'
+
 export default function UserInput() {
     return (
-        <>
-            <h1>User Input</h1>
-        </>
+        <div className={styles.container}>
+            <form onSubmit={e => {
+                e.preventDefault();
+            }}>
+                <input type="text" />
+                <button>Add Card</button>
+            </form>
+        </div>
     )
 }
