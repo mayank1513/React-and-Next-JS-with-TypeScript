@@ -41,3 +41,8 @@ button:hover:before {
     transform: translateX(0);
     opacity: 0.2;
 }
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
