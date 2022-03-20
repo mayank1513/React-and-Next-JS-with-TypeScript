@@ -1,5 +1,4 @@
 import type { NextPage } from 'next'
-import Header from '../components/Header'
 import UserInput from '../components/UserInput'
 import CardList from '../components/CardList'
 import styles from '../styles/Home.module.scss'
@@ -31,7 +30,6 @@ const Home: NextPage = () => {
         <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
       </Head>
       <div>
-        <Header />
         <UserInput />
         <CardList />
       </div>

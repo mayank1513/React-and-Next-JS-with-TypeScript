@@ -34,7 +34,7 @@ export default function UserInput() {
                         setErr(err);
                     })
             }}>
-                <input ref={myRef} type="text" />
+                <input ref={myRef} onChange={()=>{setErr("")}} type="text" />
                 <button>Add Card</button>
             </form>
             {

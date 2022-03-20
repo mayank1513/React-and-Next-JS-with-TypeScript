@@ -1,6 +1,7 @@
 .header {
     box-shadow: 0 0 2px #aaaa;
     padding: 10px;
+    text-shadow: 2px 2px 3px gray;
     &>div {
         display: flex;
         align-items: center;
@@ -18,28 +19,9 @@
             border-radius: 25px;
             cursor: pointer;
             overflow: hidden;
-            background: blue;
+            background: #2f00ff;
             color: white;
-        }
-        button:before {
-            content: " ";
-            position: absolute;
-            background: white;
-            height: 110%;
-            width: 110%;
-            left: -5%;
-            top: -5%;
-            transition: all .5s;
-            z-index: 100;
-            transform: translateX(-100%);
-        }
-        button:hover {
-            outline: none;
             border: none;
-        }
-        button:hover:before {
-            transform: translateX(0);
-            opacity: 0;
         }
     }
 }
