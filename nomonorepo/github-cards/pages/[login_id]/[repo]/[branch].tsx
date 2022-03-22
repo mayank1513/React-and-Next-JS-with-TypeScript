@@ -10,6 +10,8 @@ export default function () {
         fetch(`https://raw.githubusercontent.com/${login_id}/${repo}/${branch}/README.md`)
             .then(res => res.text())
             .then(setReadmeData)
+            .catch(err => setReadmeData(`# Error Occured!
+            ${err}`))
     }, [router.query])
     return (
         <div className="container">

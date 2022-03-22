@@ -27,7 +27,7 @@ export default function () {
             {
                 repos?.map(({ name, description, html_url, default_branch }) => (
                     <Link href={`${login_id}/${name}/${default_branch}`}>
-                        <li>
+                        <li className="link">
                             <p>
                                 <h3>{name}</h3>
                                 {description}
