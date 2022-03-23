@@ -9,8 +9,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <link rel="shortcut icon" href="github-logo.png" type="image/x-icon" />
       </Head>
-        <Header />
-        <Component {...pageProps} />
+      <Header />
+      <Component {...pageProps} />
     </>
   )
 }
