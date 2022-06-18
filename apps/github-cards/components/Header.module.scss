@@ -1,0 +1,27 @@
+.header {
+    box-shadow: 0 0 2px #aaaa;
+    padding: 10px;
+    text-shadow: 2px 2px 3px gray;
+    &>div {
+        display: flex;
+        align-items: center;
+        max-width: 1000px;
+        margin: auto;
+        button {
+            position: relative;
+            display: flex;
+            height: 50px;
+            padding: 0 30px;
+            font-size: 1.5em;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            overflow: hidden;
+            background: #2f00ff;
+            color: white;
+            border: none;
+        }
+    }
+}

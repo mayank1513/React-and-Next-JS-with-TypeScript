@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 50px;
+    box-shadow: 0 1px 3px #5555;
+    cursor: pointer;
+    border-radius: 5px;
+    &>div {
+        padding: 10px;
+    }
+    img {
+        max-width: 160px;
+    }
+    a,
+    code {
+        margin-right: 20px;
+    }
+}
