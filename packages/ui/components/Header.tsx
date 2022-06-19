@@ -1,17 +1,27 @@
 import styled from "@emotion/styled";
 import { Button, Logo } from ".";
 import { useRef, useState, useEffect } from "react";
+import Link from "next/link";
+import "../styles/globals.scss";
 
 const HeaderContainer = styled.div/*css*/ `
   // background: #87ceeb15;
   max-width: 100vw;
   header {
+    max-width: 1200px;
     margin: auto;
     align-items: center;
     display: flex;
     padding: 10px;
     justify-content: space-between;
     line-height: 1.5;
+    a {
+      display: flex;
+      align-items: center;
+      h1 {
+        margin: 0 20px;
+      }
+    }
   }
 `;
 
@@ -35,9 +45,17 @@ function BaseHeader({ title, ref }: HeaderProps) {
   return (
     <HeaderContainer ref={ref}>
       <header>
-        <Logo></Logo>
-        <h1>{title}</h1>
-        <Button style={{ "--bg-color": "blue" }}>Contact Us</Button>
+        <Link href="/">
+          <a>
+            <Logo />
+            <h1>{title}</h1>
+          </a>
+        </Link>
+        <Button
+          href="https://www.udemy.com/user/coding-simplified/"
+          style={{ "--bg-color": "blue" }}>
+          Take this course
+        </Button>
       </header>
     </HeaderContainer>
   );
@@ -69,8 +87,7 @@ export function Header(props: HeaderProps) {
       </div>
       <FixedHeader
         className="full"
-        style={headerFixed ? {} : { transform: "translate(0, -100%)" }}
-      >
+        style={headerFixed ? {} : { transform: "translate(0, -100%)" }}>
         <BaseHeader {...props} />
       </FixedHeader>
     </>

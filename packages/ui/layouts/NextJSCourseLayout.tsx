@@ -3,7 +3,9 @@ import styled from "@emotion/styled";
 import { Header } from "..";
 
 const Container = styled.div/*css*/ `
-  max-width: 100vw;
+  width: 100vw;
+  max-width: 1200px;
+  margin: auto;
   .content {
     padding-top: 20px;
   }
