@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/router";
 
 const Btn = styled.button/*css*/ `
   all: unset;
@@ -46,9 +47,10 @@ const Btn = styled.button/*css*/ `
   }
 `;
 
-export const Button = ({ children, ...props }: any) => {
+export const Button = ({ children, href, ...props }: any) => {
   const ref = useRef();
   const [shadowColor, setShadowColor] = useState("");
+  const router = useRouter();
   useEffect(() => {
     const bgColor =
       props.style &&
@@ -72,6 +74,12 @@ export const Button = ({ children, ...props }: any) => {
     <Btn
       ref={ref}
       {...props}
+      onClick={() => {
+        props?.onClick?.();
+        if (href) {
+          router.push(href);
+        }
+      }}
       style={
         shadowColor.length
           ? { ...props.style, "--shadow-color": shadowColor }
