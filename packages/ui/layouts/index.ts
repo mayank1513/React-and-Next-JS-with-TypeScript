@@ -1,1 +1,1 @@
-export { NextJSCourseLayout } from './NextJSCourseLayout'
+export { NextJSCourseLayout } from "./NextJSCourseLayout";
