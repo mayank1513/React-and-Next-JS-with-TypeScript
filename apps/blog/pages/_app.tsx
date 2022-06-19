@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <link rel="shortcut icon" href="github-logo.png" type="image/x-icon" />
       </Head>
-      <NextJSCourseLayout title="GitHub Cards App">
+      <NextJSCourseLayout title="My Awesome Blog">
         <Component {...pageProps} />
       </NextJSCourseLayout>
     </>
