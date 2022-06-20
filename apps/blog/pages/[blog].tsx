@@ -3,22 +3,32 @@ import matter from "gray-matter";
 import fs from "fs";
 import path from "path";
 import ReactMarkdown from "react-markdown";
+import styled from "styled-components";
+
+const Container = styled.div`
+  max-width: 800px;
+  margin: auto;
+`;
+
+const ImageContainer = styled.div`
+  text-align: center;
+`;
 
 export default function Blog(props) {
   return (
-    <div style={{ maxWidth: "800px", margin: "auto" }}>
+    <Container>
       <ReactMarkdown
         components={{
           img: (props) => (
-            <div style={{ textAlign: "center" }}>
+            <ImageContainer>
               <img {...props} />
-            </div>
+            </ImageContainer>
           ),
         }}>
         {props.data.content}
       </ReactMarkdown>
       ;
-    </div>
+    </Container>
   );
 }
 
