@@ -1,5 +1,5 @@
 {
-  "name": "docs",
+  "name": "blog",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -12,14 +12,18 @@
     "next": "12.0.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-markdown": "^8.0.3",
+    "styled-components": "^5.3.5",
     "ui": "*"
   },
   "devDependencies": {
+    "@types/react": "17.0.37",
+    "babel-plugin-styled-components": "^2.0.7",
     "config": "*",
     "eslint": "7.32.0",
+    "gray-matter": "^4.0.3",
     "next-transpile-modules": "9.0.0",
     "tsconfig": "*",
-    "@types/react": "17.0.37",
     "typescript": "^4.5.3"
   }
 }
