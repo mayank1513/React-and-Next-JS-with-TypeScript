@@ -7,7 +7,17 @@ import ReactMarkdown from "react-markdown";
 export default function Blog(props) {
   return (
     <div style={{ maxWidth: "800px", margin: "auto" }}>
-      <ReactMarkdown>{props.data.content}</ReactMarkdown>;
+      <ReactMarkdown
+        components={{
+          img: (props) => (
+            <div style={{ textAlign: "center" }}>
+              <img {...props} />
+            </div>
+          ),
+        }}>
+        {props.data.content}
+      </ReactMarkdown>
+      ;
     </div>
   );
 }
@@ -18,7 +28,6 @@ export function getStaticPaths() {
       blog: blogUrl,
     },
   }));
-  console.log("paths", paths);
   return {
     paths,
     fallback: false,
