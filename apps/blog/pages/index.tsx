@@ -1,15 +1,14 @@
 import { Button } from "ui";
-import fs from "fs";
-import path from "path";
 import Link from "next/link";
+import { getBlogs } from "../backend/utils";
 
 export default function Docs({ blogs }) {
   return (
     <div>
       <ul>
         {blogs.map((blog) => (
-          <li>
-            <Link href={blog.blogUrl}>
+          <li key={blog.blogUrl} style={{ margin: "20px 0" }}>
+            <Link href={"/" + blog.blogUrl}>
               <a>{blog.blogTitle}</a>
             </Link>
           </li>
@@ -21,17 +20,10 @@ export default function Docs({ blogs }) {
 
 export function getStaticProps() {
   // fetch / process some data
-  const cwd = process.cwd();
-  const blogs = fs.readdirSync(path.join(cwd, "blogs")).map((fileName) => {
-    const name = fileName.replace(".md", "");
-    return {
-      blogTitle: name,
-      blogUrl: encodeURI(name),
-    };
-  });
+
   return {
     props: {
-      blogs,
+      blogs: getBlogs(),
     },
   };
 }
