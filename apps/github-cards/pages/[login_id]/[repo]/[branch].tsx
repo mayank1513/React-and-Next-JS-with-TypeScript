@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 
 export default function () {
   const router = useRouter();
@@ -19,7 +20,22 @@ export default function () {
   }, [router.query]);
   return (
     <div className="container">
-      <ReactMarkdown>{readmeData}</ReactMarkdown>
+      <ReactMarkdown
+        rehypePlugins={[rehypeRaw]}
+        components={{
+          img: ({ src, ...props }) => (
+            <img
+              src={
+                src?.startsWith("http")
+                  ? src
+                  : `https://raw.githubusercontent.com/${login_id}/${repo}/${branch}/${src}`
+              }
+              {...props}
+            />
+          ),
+        }}>
+        {readmeData}
+      </ReactMarkdown>
     </div>
   );
 }

@@ -4,12 +4,6 @@ url:https://mayank-1513.medium.com/jsx-syntactic-sugar-for-writing-react-c6b93b9
 
 # JSX — Syntactic Sugar for Writing React
 
-[![Mayank Chaudhari](https://miro.medium.com/fit/c/35/35/1*Rh9fPNDy1ZBGVB4VnEGM5A.png)](https://mayank-1513.medium.com/?source=post_page-----c6b93b9d51b5-----------------------------------)
-
-[Mayank Chaudhari](https://mayank-1513.medium.com/?source=post_page-----c6b93b9d51b5-----------------------------------)
-
-[Sep 29, 2021·4 min read](https://mayank-1513.medium.com/jsx-syntactic-sugar-for-writing-react-c6b93b9d51b5?source=post_page-----c6b93b9d51b5-----------------------------------)
-
 ![img](https://miro.medium.com/max/875/0*znvBCJVQXa27ctdl.png)
 
 I have been creating websites using Next.js and thus naturally using JSX. Even before getting exposed to React and Next.js, I have used JSX for Vue.js applications. But until I decided to create a course on Next.js, I didn’t really know what exactly is JSX and why was it even invented.
