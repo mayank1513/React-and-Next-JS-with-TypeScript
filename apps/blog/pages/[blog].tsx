@@ -1,11 +1,14 @@
 import { getBlogs } from "../backend/utils";
+import matter from "gray-matter";
+import fs from "fs";
+import path from "path";
+import ReactMarkdown from "react-markdown";
 
 export default function Blog(props) {
-  console.log({ props });
   return (
-    <>
-      <h1>{props.params.blog}</h1>
-    </>
+    <div style={{ maxWidth: "800px", margin: "auto" }}>
+      <ReactMarkdown>{props.data.content}</ReactMarkdown>;
+    </div>
   );
 }
 
@@ -23,9 +26,13 @@ export function getStaticPaths() {
 }
 
 export function getStaticProps({ params }) {
+  const fileName = params.blog.replace(/_/g, " ") + ".md";
+  const data = matter(
+    fs.readFileSync(path.join(process.cwd(), "blogs", fileName))
+  );
   return {
     props: {
-      params,
+      data,
     },
   };
 }
