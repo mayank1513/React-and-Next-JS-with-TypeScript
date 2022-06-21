@@ -67,7 +67,7 @@ export const Button = ({ children, href, ...props }: any) => {
         .map(Number);
       bg[3] = bg[3] ? 0.3 * bg[3] : 0.3;
       setShadowColor(`rgba(${bg.join(",")})`);
-      console.log(`rgba(${bg.join(",")})`);
+      // console.log(`rgba(${bg.join(",")})`);
     }
   }, [props]);
   return (

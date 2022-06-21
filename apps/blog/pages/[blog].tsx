@@ -7,6 +7,8 @@ import rehypeRaw from "rehype-raw";
 import styled from "styled-components";
 import yaml from "js-yaml";
 import { Clap } from "ui";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const Container = styled.div`
   max-width: 800px;
@@ -53,6 +55,15 @@ const FloatingIcon = styled.div`
 `;
 
 export default function Blog(props) {
+  const router = useRouter();
+  const { blog } = router.query;
+  console.log({ blog });
+  useEffect(() => {
+    fetch(`/api/likes/${blog}`)
+      .then((res) => res.json())
+      .then((data) => console.log("api resposne", data))
+      .catch(console.error);
+  }, [blog]);
   return (
     <Container>
       <ReactMarkdown
