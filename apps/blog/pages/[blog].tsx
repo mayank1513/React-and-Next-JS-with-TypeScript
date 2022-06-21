@@ -54,6 +54,12 @@ const FloatingIcon = styled.div`
   }
 `;
 
+const debouceObj = {
+  timeOut: null,
+  localLikes: 0,
+  debounceTime: 500, // in ms
+};
+
 export default function Blog(props) {
   const router = useRouter();
   const { blog } = router.query;
@@ -68,14 +74,28 @@ export default function Blog(props) {
   }, [blog]);
 
   const handleClaps = () => {
-    fetch(`/api/likes/${blog}`, {
-      method: "POST",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setLikes(data?.likes);
+    setLikes((likes) => likes + 1);
+    debouceObj.localLikes++;
+    if (debouceObj.timeOut) clearTimeout(debouceObj.timeOut);
+
+    debouceObj.timeOut = setTimeout(() => {
+      fetch(`/api/likes/${blog}`, {
+        method: "POST",
+        body: JSON.stringify({
+          likes: debouceObj.localLikes,
+        }),
+        headers: {
+          "Content-type": "application/json",
+        },
       })
-      .catch(console.error);
+        .then((res) => res.json())
+        .then((data) => {
+          // in case user stopped hitting clap for 500 ms + and then started clicking again before API returns, we will have updated data
+          setLikes(data?.likes + debouceObj.localLikes);
+        })
+        .catch(console.error);
+      debouceObj.localLikes = 0;
+    }, debouceObj.debounceTime);
   };
   return (
     <Container>

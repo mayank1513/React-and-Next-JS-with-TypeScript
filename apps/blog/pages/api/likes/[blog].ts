@@ -10,12 +10,13 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
     })
     let likes = data?.likes || 0;
     if (req.method == "POST") {
+        const localLikes = req.body.likes;
         const data = await prisma.likes.upsert({
             where: {
                 blogUrl: blog as string
             },
             update: {
-                likes: likes + 1
+                likes: likes + localLikes
             },
             create: {
                 blogUrl: blog as string,
