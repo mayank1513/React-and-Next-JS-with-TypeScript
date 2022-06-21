@@ -6,6 +6,7 @@ import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import styled from "styled-components";
 import yaml from "js-yaml";
+import { Clap } from "ui";
 
 const Container = styled.div`
   max-width: 800px;
@@ -22,6 +23,33 @@ const ImageContainer = styled.div`
 const IframeContainer = styled.div`
   position: relative;
   text-align: center;
+`;
+
+const FloatingIcon = styled.div`
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  div {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    border-radius: 30px;
+    padding: 10px 20px;
+    background: white;
+    box-shadow: 0 2px 10px 1px #5555;
+    cursor: pointer;
+    color: #555;
+    svg {
+      margin-right: 10px;
+    }
+    &:hover {
+      color: #000;
+    }
+  }
 `;
 
 export default function Blog(props) {
@@ -43,6 +71,11 @@ export default function Blog(props) {
         }}>
         {props.data.content}
       </ReactMarkdown>
+      <FloatingIcon>
+        <div>
+          <Clap /> Likes
+        </div>
+      </FloatingIcon>
     </Container>
   );
 }
