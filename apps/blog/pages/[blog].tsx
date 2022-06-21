@@ -8,7 +8,7 @@ import styled from "styled-components";
 import yaml from "js-yaml";
 import { Clap } from "ui";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const Container = styled.div`
   max-width: 800px;
@@ -57,13 +57,26 @@ const FloatingIcon = styled.div`
 export default function Blog(props) {
   const router = useRouter();
   const { blog } = router.query;
-  console.log({ blog });
+  const [likes, setLikes] = useState(0);
   useEffect(() => {
     fetch(`/api/likes/${blog}`)
       .then((res) => res.json())
-      .then((data) => console.log("api resposne", data))
+      .then((data) => {
+        setLikes(data?.likes);
+      })
       .catch(console.error);
   }, [blog]);
+
+  const handleClaps = () => {
+    fetch(`/api/likes/${blog}`, {
+      method: "POST",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setLikes(data?.likes);
+      })
+      .catch(console.error);
+  };
   return (
     <Container>
       <ReactMarkdown
@@ -83,8 +96,8 @@ export default function Blog(props) {
         {props.data.content}
       </ReactMarkdown>
       <FloatingIcon>
-        <div>
-          <Clap /> Likes
+        <div onClick={handleClaps}>
+          <Clap /> {likes}
         </div>
       </FloatingIcon>
     </Container>
