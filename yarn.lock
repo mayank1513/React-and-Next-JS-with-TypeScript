@@ -600,6 +600,11 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
+"@mayank1513/sticky-section-header@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@mayank1513/sticky-section-header/-/sticky-section-header-0.0.4.tgz#ae09135b24fefb5cdc2eb1a8e4a92d506d4c87c2"
+  integrity sha512-fbLT8Bx7QBBK793D1sPKpW0RWPZFkZe8nOGPCbHpvRKoG01ugwWl/urjIhbFw2N7tlw07jHrHw3Eu3eahXIJOA==
+
 "@napi-rs/triples@1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@napi-rs/triples/-/triples-1.0.3.tgz#76d6d0c3f4d16013c61e45dfca5ff1e6c31ae53c"
