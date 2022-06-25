@@ -117,7 +117,18 @@ export default function Blog(props) {
       </ReactMarkdown>
       <FloatingIcon>
         <div onClick={handleClaps}>
-          <Clap /> {likes}
+          <Clap /> {likes}{" "}
+          {props.data.data.url && (
+            <>
+              | &nbsp;
+              <a
+                href={props.data.data.url}
+                target="_blank"
+                rel="noopener noreferrer">
+                Read Full Article
+              </a>
+            </>
+          )}
         </div>
       </FloatingIcon>
     </Container>

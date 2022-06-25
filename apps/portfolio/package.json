@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "portfolio",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -9,17 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "linaria": "^2.3.1",
     "next": "12.0.3",
+    "next-linaria": "^0.11.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "ui": "*"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.5",
+    "@types/react": "17.0.37",
     "config": "*",
     "eslint": "7.32.0",
     "next-transpile-modules": "9.0.0",
     "tsconfig": "*",
-    "@types/react": "17.0.37",
     "typescript": "^4.5.3"
   }
 }
