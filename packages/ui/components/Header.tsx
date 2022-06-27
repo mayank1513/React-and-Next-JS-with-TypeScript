@@ -73,7 +73,7 @@ export function Header(props: HeaderProps) {
       },
       { root: null, rootMargin: "0px", threshold: [0, 0.5, 0.8, 1] }
     );
-    observer.observe(ref.current);
+    ref.current && observer.observe(ref.current);
     return () => {
       if (ref.current) observer.unobserve(ref.current);
     };

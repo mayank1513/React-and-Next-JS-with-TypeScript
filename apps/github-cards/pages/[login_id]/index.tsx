@@ -8,7 +8,7 @@ type RepoType = {
   html_url: string;
   default_branch: string;
 };
-export default function () {
+export default function Repos() {
   const router = useRouter();
   const [repos, setRepos] = useState<RepoType[]>([]);
   const { login_id } = router?.query;
@@ -39,8 +39,8 @@ export default function () {
   return repos?.length ? (
     <ul className="container">
       {repos?.map(({ name, description, html_url, default_branch }) => (
-        <Link href={`${login_id}/${name}/${default_branch}`}>
-          <li className="link">
+        <Link key={name} href={`${login_id}/${name}/${default_branch}`}>
+          <li key={name} className="link">
             <p>
               <h3>{name}</h3>
               {description}

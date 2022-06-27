@@ -20,7 +20,7 @@ export default function Web() {
     <Container>
       <Header />
       {[...Array(50).keys()].map((i) => (
-        <li>{i}</li>
+        <li key={i}>{i}</li>
       ))}
     </Container>
   );

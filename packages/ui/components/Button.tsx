@@ -59,7 +59,13 @@ export const Button = ({ children, href, ...props }: any) => {
           !props.style["background"].includes("url")) ||
         props.style["backgroundColor"] ||
         props.style["background-color"]);
-    if (bgColor && !props.style.hasOwnProperty("--shadow-color")) {
+    if (
+      ref.current &&
+      window &&
+      bgColor &&
+      !props.style.hasOwnProperty("--shadow-color")
+    ) {
+      // @ts-ignore
       const bg = window
         .getComputedStyle(ref.current)
         .backgroundColor.match(/rgba?\((.*)\)/)[1]

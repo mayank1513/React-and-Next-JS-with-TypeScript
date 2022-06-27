@@ -9,19 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@mayank1513/sticky-section-header": "^0.0.4",
+    "@mayank1513/sticky-section-header": "^0.0.6",
     "linaria": "^2.3.1",
-    "next": "12.0.3",
+    "next": "12.1.6",
     "next-linaria": "^0.11.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "ui": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.18.5",
-    "@types/react": "17.0.37",
+    "@types/react": "18.0.14",
     "config": "*",
-    "eslint": "7.32.0",
+    "eslint": "8.18.0",
     "next-transpile-modules": "9.0.0",
     "tsconfig": "*",
     "typescript": "^4.5.3"

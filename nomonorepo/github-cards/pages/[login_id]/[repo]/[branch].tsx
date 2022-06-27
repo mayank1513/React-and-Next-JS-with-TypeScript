@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 
-export default function () {
+export default function ReadMe() {
   const router = useRouter();
   const [readmeData, setReadmeData] = useState("");
   const { login_id, repo, branch } = router?.query;
@@ -16,7 +16,7 @@ export default function () {
         setReadmeData(`# Error Occured!
             ${err}`)
       );
-  }, [router.query]);
+  }, [login_id, repo, branch]);
   return (
     <div className="container">
       <ReactMarkdown>{readmeData}</ReactMarkdown>
