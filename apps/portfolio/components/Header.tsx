@@ -4,11 +4,11 @@ import Image from "next/image";
 import logo from "../assets/logo.png";
 import { useState } from "react";
 
-const StyledHeader = styled.div`
+const StyledHeader = styled.div<{ r }>`
   height: 100%;
   background: red;
   img {
-    border-radius: ${(props) => `${props.r}%`};
+    border-radius: ${({ r }) => r}%;
     border: 1px solid green;
   }
 `;

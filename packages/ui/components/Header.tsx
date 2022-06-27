@@ -62,7 +62,7 @@ function BaseHeader({ title, ref }: HeaderProps) {
 }
 
 export function Header(props: HeaderProps) {
-  const ref = useRef();
+  const ref = useRef<HTMLDivElement>(null);
   const [headerFixed, setHeaderFixe] = useState(false);
 
   useEffect(() => {
