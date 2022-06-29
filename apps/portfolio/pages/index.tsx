@@ -1,14 +1,13 @@
-import { Button } from "ui";
 import { styled } from "linaria/react";
 import { css } from "linaria";
 import Header from "../components/Header";
 
 const Container = styled.div`
-  background: gray;
+  background: #80422f44;
   margin-top: ${100 / 2}px;
   max-width: 850px;
-  padding-top: 40px;
   margin: auto;
+  margin-top: 40px;
 `;
 
 const myClass = css`
