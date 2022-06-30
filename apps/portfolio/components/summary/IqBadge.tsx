@@ -42,18 +42,6 @@ const StyledBadge = styled.a`
       font-size: 0.6rem;
     }
   }
-  .tech {
-    padding: 0.25em 0.4em;
-    font-size: 75%;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: 0.25rem;
-    color: #fff;
-    background-color: #17a2b8;
-  }
 `;
 
 export default function IqBadge({ tech, iq, date }) {

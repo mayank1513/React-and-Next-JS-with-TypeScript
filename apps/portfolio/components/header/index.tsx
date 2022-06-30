@@ -45,7 +45,7 @@ const StyledHeader = styled.div<{ r }>`
   }
 `;
 
-const minHeight = 90;
+export const minHeight = 90;
 const maxHeight = 180;
 
 export default function Header() {

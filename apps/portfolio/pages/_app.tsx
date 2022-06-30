@@ -21,25 +21,47 @@ export const globals = css`
       background: #fffb;
       border-radius: 10px;
       padding: 15px;
-      margin: 15px;
+      margin: 30px 15px;
       color: #2c3e50;
       text-align: justify;
       line-height: 1.5;
-      h1 {
+      h1,
+      h3 {
         text-transform: uppercase;
         font-weight: 700;
         color: #80422f;
         margin: auto;
       }
-      hr {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        border: 0;
-        border-top-color: currentcolor;
-        border-top-style: none;
-        border-top-width: 0px;
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
+      h3 {
+        font-weight: 500;
       }
+      ul {
+        margin: 0;
+      }
+      li {
+        margin: 8px 0;
+      }
+    }
+    hr {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      border: 0;
+      border-top-color: currentcolor;
+      border-top-style: none;
+      border-top-width: 0px;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .tech {
+      padding: 0.25em 0.4em;
+      font-size: 75%;
+      font-weight: 700;
+      line-height: 1;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: baseline;
+      border-radius: 0.25rem;
+      color: #fff;
+      background-color: #17a2b8;
     }
   }
 `;

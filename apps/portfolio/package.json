@@ -9,7 +9,7 @@
         "lint": "next lint"
     },
     "dependencies": {
-        "@mayank1513/sticky-section-header": "^0.0.7",
+        "@mayank1513/sticky-section-header": "^0.0.8",
         "linaria": "^2.3.1",
         "next": "12.1.6",
         "next-linaria": "^0.11.0",
