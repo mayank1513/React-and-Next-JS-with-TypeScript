@@ -52,7 +52,8 @@ export const globals = css`
       border-top: 1px solid rgba(0, 0, 0, 0.1);
     }
     .tech {
-      padding: 0.25em 0.4em;
+      padding: 5px;
+      margin: 3px;
       font-size: 75%;
       font-weight: 700;
       line-height: 1;

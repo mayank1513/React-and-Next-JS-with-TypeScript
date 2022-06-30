@@ -1,9 +1,10 @@
 import { styled } from "linaria/react";
+import { useState } from "react";
 
 const StyledDetailsContainer = styled.section`
   display: flex;
   .decoration {
-    padding-top: 7px;
+    padding: 7px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,68 +23,101 @@ const StyledDetailsContainer = styled.section`
   }
   .main {
     padding-left: 15px;
-    a {
-      display: block;
-      text-decoration: none;
+    flex-grow: 1;
+    min-width: 0;
+    h2 {
+      margin: 0;
       font-weight: 700;
       line-height: 1.5;
       font-size: 1.2rem;
+    }
+    h4 {
+      margin: 0;
+      margin-top: 25px;
+    }
+    a {
+      text-decoration: none;
       color: #0056b3;
       &:hover {
         text-decoration: underline;
       }
     }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .duration {
+        color: #aab4c3;
+        font-weight: 700;
+      }
+      .institute {
+        display: block;
+        color: #58677c;
+        font-size: 0.875rem;
+        font-weight: 500;
+        cursor: pointer;
+        text-align: right;
+      }
+    }
+    .skills {
+      margin-top: 10px;
+      .tech {
+        display: inline-block;
+      }
+    }
   }
 `;
 
-export default function SectionDetails() {
+export default function SectionDetails({ data }) {
+  const id = data.title.replace(/ /g, "-");
+  const [hidden, setHidden] = useState(false);
   return (
     <StyledDetailsContainer>
       <div className="decoration">
         <div className="buble"></div>
         <div className="line"></div>
       </div>
-      <div className="main">
-        <a href="" target="_blank">
-          Investor Pulse
-        </a>
-        <span></span>
-        <div>
-          <p>
-            Contributed to build an end-to-end solution to power venture
-            capitalist’s decision flow by enabling fast and secure collaboration
-            and data sharing with stakeholders
-          </p>
-          <h6>Achievements:</h6>
+      <div className="main" id={id}>
+        <div className="header">
+          <div>
+            <h2>
+              <a href={data.link || `#${id}`} target="_blank" rel="noreferrer">
+                {data.title}
+              </a>
+            </h2>
+            <span className="duration">{data.duration}</span>
+          </div>
+          <div>
+            <a
+              href={data.instituteLink || `#${id}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="institute"
+            >
+              {data.institute || ""}
+            </a>
+            <i className="institute" onClick={() => setHidden(!hidden)}>
+              Show {hidden ? "more" : "less"}...
+            </i>
+          </div>
+        </div>
+        <div hidden={hidden}>
+          <p>{data.summary}</p>
+          <h4>Achievements:</h4>
           <ul>
-            <li>
-              <span>Clean up tech debts</span>
-            </li>
-            <li>
-              <span>
-                Refactor codebase by breaking down large unmaintainable
-                components into smaller organised ones
-              </span>
-            </li>
-            <li>
-              <span>Build UI at rapid pace</span>
-            </li>
-            <li>
-              <span>
-                Converted figma designs to pixel-perfect funcitonal UI
-              </span>
-            </li>
+            {data.achievements?.map((item, i) => (
+              <li key={id + i}>{item}</li>
+            ))}
           </ul>
         </div>
-        <h6>Key Skills:</h6>
-        <span className="badge badge-info">React</span>
-        <span className="badge badge-info">Redux</span>
-        <span className="badge badge-info">Redux Saga</span>
-        <span className="badge badge-info">Material UI</span>
-        <span className="badge badge-info">SCSS</span>
-        <span className="badge badge-info">Git</span>
-        <span className="badge badge-info">GitHub</span>
-        <br />
+        <h4>Key Skills:</h4>
+        <div className="skills">
+          {data.skills?.map((skill) => (
+            <span key={skill} className="tech">
+              {skill}
+            </span>
+          ))}
+        </div>
       </div>
     </StyledDetailsContainer>
   );

@@ -8,7 +8,6 @@ import Details from "./Details";
 import Profiles from "./Profiles";
 
 const headerClass = css`
-  filter: drop-shadow(0px 0px 1px greenyellow);
   z-index: 100;
 `;
 
@@ -33,6 +32,7 @@ const StyledHeader = styled.div<{ r }>`
   tr {
     color: white;
     text-decoration: none;
+    white-space: nowrap;
     &:hover {
       filter: drop-shadow(1px 1px 3px red);
     }
