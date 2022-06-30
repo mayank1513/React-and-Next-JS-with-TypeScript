@@ -4,6 +4,10 @@ export const profiles = [
     link: "https://stackoverflow.com/users/9640177/mayank1513",
   },
   {
+    icon: "git.svg",
+    link: "https://github.com/mayank1513",
+  },
+  {
     icon: "linkedIn.svg",
     link: "http://www.linkedin.com/in/mayank-chaudhari",
   },
@@ -22,6 +26,25 @@ export const profiles = [
   {
     icon: "scholar.svg",
     link: "https://scholar.google.co.in/citations?user=VpZnTocAAAAJ&hl=en&authuser=1",
+  },
+];
+
+export const extraProfiles = [
+  {
+    icon: "android.svg",
+    link: "https://play.google.com/store/apps/dev?id=5009060970068759882",
+  },
+  {
+    icon: "gcp.svg",
+    link: "https://www.qwiklabs.com/public_profiles/93a154a2-95fd-4466-87ea-816adc85051c",
+  },
+  {
+    icon: "hackerRank.svg",
+    link: "https://www.hackerrank.com/mayank_srmu",
+  },
+  {
+    icon: "codeSignal.svg",
+    link: "https://app.codesignal.com/profile/mayank1513",
   },
 ];
 

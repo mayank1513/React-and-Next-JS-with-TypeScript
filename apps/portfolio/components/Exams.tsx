@@ -48,7 +48,7 @@ export default function Exams() {
       <hr />
       <StyledAptiContainer>
         {aptitude.map(({ title, year, highlight, more }) => (
-          <div key={title}>
+          <div key={title + year}>
             <p>
               <span className="title">{title}</span>
               <span> ({year}) </span>

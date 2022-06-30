@@ -6,13 +6,15 @@ import logo from "/assets/logo.png";
 import { useEffect, useState } from "react";
 import Details from "./Details";
 import Profiles from "./Profiles";
+import useTransitionConstant, {
+  transitionWidth,
+} from "hooks/useTransitionConstant";
 
 const headerClass = css`
   z-index: 100;
   transition: all 0.5s, height 0s;
 `;
 
-export const transitionWidth = 600;
 export const minHeight = 90;
 const maxHeight = 180;
 
@@ -57,16 +59,14 @@ const StyledHeader = styled.div<{ r }>`
 export default function Header() {
   const [height, setHeight] = useState(maxHeight);
   const [fraction, setFraction] = useState(1);
-  const [c, setC] = useState(1);
-  useEffect(() => {
-    setC(innerWidth < transitionWidth ? 2 : 1);
-  }, []);
+  const c = useTransitionConstant();
   const handleHeightChange = (fraction, height) => {
     setFraction(1 - fraction); // 1 when collapsed
     setHeight(height / c);
   };
   return (
     <CollapsibleStickySectionHeader
+      key={c}
       onChangeHeight={handleHeightChange}
       minHeight={c * minHeight}
       maxHeight={c * maxHeight}

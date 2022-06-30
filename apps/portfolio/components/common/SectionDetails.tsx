@@ -57,6 +57,13 @@ const StyledDetailsContainer = styled.section`
         font-weight: 500;
         cursor: pointer;
         text-align: right;
+        &.toggle-arrow {
+          text-shadow: 0px 0px 5px green;
+        }
+        &.mobile {
+          text-align: left;
+          display: none;
+        }
       }
     }
     .skills {
@@ -70,6 +77,13 @@ const StyledDetailsContainer = styled.section`
     .decoration {
       margin-left: -10px;
       margin-right: -10px;
+    }
+    .main .header .institute {
+      display: none;
+      &.mobile,
+      &.toggle-arrow {
+        display: block;
+      }
     }
   }
 `;
@@ -91,6 +105,14 @@ export default function SectionDetails({ data }) {
                 {data.title}
               </a>
             </h2>
+            <a
+              href={data.instituteLink || `#${id}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="institute mobile"
+            >
+              {data.institute || ""}
+            </a>
             <span className="duration">{data.duration}</span>
           </div>
           <div>
@@ -102,9 +124,12 @@ export default function SectionDetails({ data }) {
             >
               {data.institute || ""}
             </a>
-            <i className="institute" onClick={() => setHidden(!hidden)}>
-              Show {hidden ? "more" : "less"}...
-            </i>
+            <span
+              className="institute toggle-arrow"
+              onClick={() => setHidden(!hidden)}
+            >
+              {hidden ? "▽" : "△"}
+            </span>
           </div>
         </div>
         <div hidden={hidden}>

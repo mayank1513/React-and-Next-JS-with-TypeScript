@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import Interests from "components/Interests";
 import Languages from "components/Languages";
 import Exams from "components/Exams";
+import Footer from "components/Footer";
 
 const Container = styled.div`
   background: #80422f44;
@@ -17,7 +18,6 @@ const Container = styled.div`
   margin: auto;
   margin-top: 40px;
   margin-bottom: 0;
-  padding-bottom: 15px;
   @media screen and (max-width: 820px) {
     margin: 0;
   }
@@ -55,6 +55,7 @@ export default function Home() {
       <Exams />
       <Languages />
       <Interests />
+      <Footer />
     </Container>
   );
 }

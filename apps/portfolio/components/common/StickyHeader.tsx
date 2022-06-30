@@ -1,5 +1,6 @@
 import { StickySectionHeader } from "@mayank1513/sticky-section-header";
 import { minHeight } from "components/header";
+import useTransitionConstant from "hooks/useTransitionConstant";
 import { css } from "linaria";
 
 const headerClass = css`
@@ -14,8 +15,13 @@ const headerClass = css`
 `;
 
 export default function StickyHeader({ children }) {
+  const c = useTransitionConstant();
   return (
-    <StickySectionHeader top={minHeight} {...{ className: headerClass }}>
+    <StickySectionHeader
+      key={c}
+      top={c * minHeight}
+      {...{ className: headerClass }}
+    >
       <section>
         <h1>{children}</h1>
       </section>
