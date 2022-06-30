@@ -3,11 +3,13 @@ import { minHeight } from "components/header";
 import { css } from "linaria";
 
 const headerClass = css`
-  transition: all 0.5s;
   &[stuck] section {
     margin: 15px 0;
     border-radius: 0;
-    padding: 5px;
+    padding: 3px;
+    h1 {
+      font-size: 1em;
+    }
   }
 `;
 

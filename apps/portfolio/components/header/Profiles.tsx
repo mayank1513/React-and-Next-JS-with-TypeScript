@@ -7,10 +7,6 @@ const StyledProfileContainer = styled.div`
   overflow: auto;
   padding-top: 10px;
   color: white;
-  transition: 0.5s all;
-  * {
-    transition: 0.5s all;
-  }
   a {
     color: white;
     text-decoration: none;
@@ -37,6 +33,9 @@ const StyledProfileContainer = styled.div`
   }
   &.collapsed {
     height: 0;
+  }
+  @media screen and (max-width: 780px) {
+    display: none;
   }
 `;
 

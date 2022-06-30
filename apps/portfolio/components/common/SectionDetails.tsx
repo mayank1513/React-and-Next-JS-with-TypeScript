@@ -66,6 +66,12 @@ const StyledDetailsContainer = styled.section`
       }
     }
   }
+  @media screen and (max-width: 600px) {
+    .decoration {
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+  }
 `;
 
 export default function SectionDetails({ data }) {

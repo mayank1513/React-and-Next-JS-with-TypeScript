@@ -7,6 +7,9 @@ import StickyHeader from "components/common/StickyHeader";
 import SectionDetails from "components/common/SectionDetails";
 import { data, sections } from "utils/data";
 import { useEffect } from "react";
+import Interests from "components/Interests";
+import Languages from "components/Languages";
+import Exams from "components/Exams";
 
 const Container = styled.div`
   background: #80422f44;
@@ -15,13 +18,12 @@ const Container = styled.div`
   margin-top: 40px;
   margin-bottom: 0;
   padding-bottom: 15px;
+  @media screen and (max-width: 820px) {
+    margin: 0;
+  }
 `;
 
-const myClass = css`
-  color: green;
-`;
-
-export default function Web() {
+export default function Home() {
   useEffect(() => {
     const elId = location.href.split("#")[1];
     if (!elId) return;
@@ -50,6 +52,9 @@ export default function Web() {
           ))}
         </div>
       ))}
+      <Exams />
+      <Languages />
+      <Interests />
     </Container>
   );
 }

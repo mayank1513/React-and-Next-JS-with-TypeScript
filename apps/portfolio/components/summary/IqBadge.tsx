@@ -9,7 +9,6 @@ const StyledBadge = styled.a`
   box-shadow: 2px 1px 5px #adff2f;
   text-decoration: none;
   color: #231f20;
-  transition: 0.5s all;
   &:hover {
     transform: scale(1.1);
     box-shadow: 2px 1px 5px red;

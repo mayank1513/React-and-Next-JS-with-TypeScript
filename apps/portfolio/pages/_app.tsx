@@ -5,6 +5,7 @@ export const globals = css`
   :global() {
     * {
       box-sizing: border-box;
+      transition: 0.5s all;
     }
     html,
     body {

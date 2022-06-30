@@ -3,13 +3,18 @@ import { css } from "linaria";
 import { CollapsibleStickySectionHeader } from "@mayank1513/sticky-section-header";
 import Image from "next/image";
 import logo from "/assets/logo.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Details from "./Details";
 import Profiles from "./Profiles";
 
 const headerClass = css`
   z-index: 100;
+  transition: all 0.5s, height 0s;
 `;
+
+export const transitionWidth = 600;
+export const minHeight = 90;
+const maxHeight = 180;
 
 const StyledHeader = styled.div<{ r }>`
   height: 100%;
@@ -43,23 +48,28 @@ const StyledHeader = styled.div<{ r }>`
       letter-spacing: 0.5px;
     }
   }
+  @media screen and (max-width: ${transitionWidth}px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
-
-export const minHeight = 90;
-const maxHeight = 180;
 
 export default function Header() {
   const [height, setHeight] = useState(maxHeight);
   const [fraction, setFraction] = useState(1);
+  const [c, setC] = useState(1);
+  useEffect(() => {
+    setC(innerWidth < transitionWidth ? 2 : 1);
+  }, []);
   const handleHeightChange = (fraction, height) => {
     setFraction(1 - fraction); // 1 when collapsed
-    setHeight(height);
+    setHeight(height / c);
   };
   return (
     <CollapsibleStickySectionHeader
       onChangeHeight={handleHeightChange}
-      minHeight={minHeight}
-      maxHeight={maxHeight}
+      minHeight={c * minHeight}
+      maxHeight={c * maxHeight}
       {...{ className: headerClass }}
     >
       <StyledHeader r={fraction}>
