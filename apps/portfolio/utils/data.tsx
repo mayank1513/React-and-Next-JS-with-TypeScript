@@ -6,6 +6,7 @@ export const data = {
     {
       title: "Web Development Courses",
       link: "https://www.udemy.com/user/coding-simplified/",
+      bg: "web-dev",
       summary:
         "Teaching is learning twice! I designed and delivered web development courses to help students and professionals get started quickly with the most in-demand web development technologies.",
       achievements: [
@@ -63,6 +64,7 @@ export const data = {
     },
     {
       title: "Investor Pulse",
+      bg: "web-dev",
       summary:
         "Contributed to build an end-to-end solution to power venture capitalist’s decision flow by enabling fast and secure collaboration and data sharing with stakeholders",
       achievements: [
@@ -83,6 +85,7 @@ export const data = {
     },
     {
       title: "Lab on Computer",
+      bg: "web-dev",
       summary:
         "Contributed to the complete overhoul of the product, formulated mechanisms to improve performance and enhance user experience",
       achievements: [
@@ -107,6 +110,7 @@ export const data = {
     },
     {
       title: "AI/ML MVPs",
+      bg: "cv",
       link: "https://www.upwork.com/workwith/mayankkumarchaudhari",
       summary:
         "Built several minimum viable products such as interactive voice response system, retail genome, web scrapping with sentiment analysis, etc.",
@@ -165,6 +169,7 @@ export const data = {
   "Work Experience": [
     {
       title: "Full Stack Engineer",
+      bg: "full-stack",
       duration: "May 2022 - Present",
       institute: "Default - Working with innovative startups",
       summary:
@@ -183,6 +188,7 @@ export const data = {
     },
     {
       title: "Front End Engineer / Developer Consultant",
+      bg: "full-stack",
       link: "https://www.sequoiacap.com/india/",
       duration: "Feb - May 2022",
       institute: "Sequoia Capital",
@@ -235,6 +241,7 @@ export const data = {
     },
     {
       title: "Freelancer",
+      bg: "cv1",
       link: "https://www.upwork.com/o/profiles/users/_~0142999d8b15001517/",
       duration: "2019 - present",
       institute: "Upwork",
@@ -289,6 +296,7 @@ export const data = {
     },
     {
       title: "Assistant Professor",
+      bg: "cv1",
       duration: "2019 - 2020",
       institute: "Department of Nanotechnology, VVPEC",
       summary:
@@ -305,6 +313,7 @@ export const data = {
     },
     {
       title: "Owner, Lead Developer",
+      bg: "mobile",
       link: "https://krishna-apps.vercel.app",
       duration: "2018 - Present",
       institute: "Krishna Apps",
@@ -340,6 +349,7 @@ export const data = {
     },
     {
       title: "Research Scholar",
+      bg: "research",
       link: "https://mayank1513.github.io/assets/images/nus_result.pdf",
       duration: "2016 - 2018",
       institute: "Electrical and Computer Engineering, NUS",
@@ -377,7 +387,8 @@ export const data = {
       ],
     },
     {
-      title: "Assistant Professor (Physics)",
+      title: "Assistant Professor",
+      bg: "prof",
       duration: "2014 - 2016",
       institute: "Inst. of Natural Sciences and Humanities, SRMU",
       summary:
@@ -429,6 +440,7 @@ export const data = {
   Education: [
     {
       title: "Integrated M. Tech",
+      bg: "edu",
       link: "https://mayank1513.github.io/assets/images/degree_cert_transcript_and_marksheets-compressed.pdf",
       duration: "2009 - 2014",
       institute: "Applied Physics, IIT Varanasi",

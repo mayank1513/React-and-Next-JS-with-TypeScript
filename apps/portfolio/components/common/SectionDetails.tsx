@@ -1,3 +1,4 @@
+import { StickySectionHeader } from "@mayank1513/sticky-section-header";
 import { styled } from "linaria/react";
 import { useState } from "react";
 
@@ -88,7 +89,7 @@ const StyledDetailsContainer = styled.section`
   }
 `;
 
-export default function SectionDetails({ data }) {
+export default function SectionDetails({ data, setBg }) {
   const id = data.title.replace(/ /g, "-");
   const [hidden, setHidden] = useState(false);
   return (
@@ -98,40 +99,52 @@ export default function SectionDetails({ data }) {
         <div className="line"></div>
       </div>
       <div className="main" id={id}>
-        <div className="header">
-          <div>
-            <h2>
-              <a href={data.link || `#${id}`} target="_blank" rel="noreferrer">
-                {data.title}
+        <StickySectionHeader
+          top={300}
+          stick={false}
+          callBack={(entry) => {
+            entry.isIntersecting && data.bg && setBg(data.bg);
+          }}
+        >
+          <div className="header">
+            <div>
+              <h2>
+                <a
+                  href={data.link || `#${id}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {data.title}
+                </a>
+              </h2>
+              <a
+                href={data.instituteLink || `#${id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="institute mobile"
+              >
+                {data.institute || ""}
               </a>
-            </h2>
-            <a
-              href={data.instituteLink || `#${id}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="institute mobile"
-            >
-              {data.institute || ""}
-            </a>
-            <span className="duration">{data.duration}</span>
+              <span className="duration">{data.duration}</span>
+            </div>
+            <div>
+              <a
+                href={data.instituteLink || `#${id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="institute"
+              >
+                {data.institute || ""}
+              </a>
+              <span
+                className="institute toggle-arrow"
+                onClick={() => setHidden(!hidden)}
+              >
+                {hidden ? "▽" : "△"}
+              </span>
+            </div>
           </div>
-          <div>
-            <a
-              href={data.instituteLink || `#${id}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="institute"
-            >
-              {data.institute || ""}
-            </a>
-            <span
-              className="institute toggle-arrow"
-              onClick={() => setHidden(!hidden)}
-            >
-              {hidden ? "▽" : "△"}
-            </span>
-          </div>
-        </div>
+        </StickySectionHeader>
         <div hidden={hidden}>
           <p>{data.summary}</p>
           <h4>Achievements:</h4>
