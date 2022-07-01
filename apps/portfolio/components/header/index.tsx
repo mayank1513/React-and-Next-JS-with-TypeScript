@@ -3,7 +3,7 @@ import { css } from "linaria";
 import { CollapsibleStickySectionHeader } from "@mayank1513/sticky-section-header";
 import Image from "next/image";
 import logo from "/assets/logo.png";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Details from "./Details";
 import Profiles from "./Profiles";
 import useTransitionConstant, {

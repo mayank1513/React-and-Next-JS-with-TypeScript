@@ -23,6 +23,18 @@ const Container = styled.div`
   @media screen and (max-width: 820px) {
     margin: 0;
   }
+  @media print {
+    min-width: 820px;
+    svg {
+      fill: black !important;
+    }
+    section {
+      padding: 5px 15px;
+    }
+    .bg {
+      display: none !important;
+    }
+  }
 `;
 
 export default function Home() {
