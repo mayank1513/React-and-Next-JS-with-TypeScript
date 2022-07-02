@@ -71,6 +71,9 @@ const StyledDetails = styled.div`
       padding: 2px;
     }
   }
+  @media print {
+    text-shadow: none !important;
+  }
 `;
 
 export default function Details({ collapsed }) {

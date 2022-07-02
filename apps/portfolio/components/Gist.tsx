@@ -1,7 +1,14 @@
-export default function Gist() {
+import { StickySectionHeader } from "@mayank1513/sticky-section-header";
+
+export default function Gist({ setBg }) {
   return (
     <section>
-      <h1>Gist</h1>
+      <StickySectionHeader
+        stick={false}
+        callBack={(entry) => entry.isIntersecting && setBg("stars")}
+      >
+        <h1>Gist</h1>
+      </StickySectionHeader>
       <hr />
       <p>
         <b>Experience: </b>8 years
@@ -28,22 +35,27 @@ export default function Gist() {
         </li>
         <li>Microsoft certified professional.</li>
         <li>
-          Open source contributor:&nbsp;
-          <a
-            href="https://stackoverflow.com/users/9640177/mayank1513"
-            target="_blank"
-            rel="noopener noreferrer"
+          <StickySectionHeader
+            stick={false}
+            callBack={(entry) => entry.isIntersecting && setBg("stars")}
           >
-            StackOverflow
-          </a>
-          ,&nbsp;
-          <a
-            href="https://github.com/mayank1513"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>
+            Open source contributor:&nbsp;
+            <a
+              href="https://stackoverflow.com/users/9640177/mayank1513"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              StackOverflow
+            </a>
+            ,&nbsp;
+            <a
+              href="https://github.com/mayank1513"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+          </StickySectionHeader>
         </li>
       </ul>
     </section>

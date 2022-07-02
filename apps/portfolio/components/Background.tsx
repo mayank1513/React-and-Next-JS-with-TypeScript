@@ -22,6 +22,12 @@ const StyledBackground = styled.div`
     right: 0;
     bottom: 0;
   }
+  .web-dev {
+    background: #4f00b1;
+    .cover {
+      display: none !important;
+    }
+  }
 `;
 
 export default function Background({ bg }) {

@@ -4,9 +4,22 @@ import { profiles } from "../../utils";
 const StyledProfileContainer = styled.div`
   max-width: 180px;
   height: 100%;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   padding-top: 10px;
   color: white;
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #fff5;
+    outline: 1px solid #5555;
+    border-radius: 2px;
+  }
   a {
     color: white;
     text-decoration: none;
@@ -36,6 +49,9 @@ const StyledProfileContainer = styled.div`
   }
   @media screen and (max-width: 780px) {
     display: none;
+  }
+  @media print {
+    overflow: hidden;
   }
 `;
 

@@ -59,16 +59,8 @@ export default function Home() {
       <Background bg={bg} />
       <Container>
         <Header />
-        <StickySectionHeader stick={false} callBack={() => setBg("")}>
-          <Summary />
-        </StickySectionHeader>
-        <StickySectionHeader
-          stick={false}
-          top={100}
-          callBack={(entry) => entry.isIntersecting && setBg("stars")}
-        >
-          <Gist />
-        </StickySectionHeader>
+        <Summary setBg={setBg} />
+        <Gist setBg={setBg} />
         {sections.map((section) => (
           <div key={section}>
             <StickyHeader>{section}</StickyHeader>

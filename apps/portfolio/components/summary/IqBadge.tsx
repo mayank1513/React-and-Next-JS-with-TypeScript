@@ -41,6 +41,11 @@ const StyledBadge = styled.a`
       font-size: 0.6rem;
     }
   }
+  @media print {
+    .iq-badge .iq {
+      color: black;
+    }
+  }
 `;
 
 export default function IqBadge({ tech, iq, date }) {

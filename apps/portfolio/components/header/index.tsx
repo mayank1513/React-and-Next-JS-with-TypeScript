@@ -2,7 +2,7 @@ import { styled } from "linaria/react";
 import { css } from "linaria";
 import { CollapsibleStickySectionHeader } from "@mayank1513/sticky-section-header";
 import Image from "next/image";
-import logo from "/assets/logo.png";
+import logo from "/public/logo.png";
 import { useState } from "react";
 import Details from "./Details";
 import Profiles from "./Profiles";
@@ -13,6 +13,9 @@ import useTransitionConstant, {
 const headerClass = css`
   z-index: 100;
   transition: all 0.5s, height 0s;
+  @media print {
+    position: relative !important;
+  }
 `;
 
 export const minHeight = 90;

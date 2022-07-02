@@ -87,6 +87,11 @@ const StyledDetailsContainer = styled.section`
       }
     }
   }
+  @media print {
+    .toggle-arrow {
+      display: none !important;
+    }
+  }
 `;
 
 export default function SectionDetails({ data, setBg }) {
