@@ -22,11 +22,17 @@ const StyledBackground = styled.div`
     right: 0;
     bottom: 0;
   }
+  .cover {
+    filter: blur(4px);
+  }
   .web-dev {
     background: #4f00b1;
     .cover {
       display: none !important;
     }
+  }
+  .yogi {
+    background: black;
   }
 `;
 

@@ -46,6 +46,10 @@ export const extraProfiles = [
     icon: "codeSignal.svg",
     link: "https://app.codesignal.com/profile/mayank1513",
   },
+  {
+    icon: "kapp.png",
+    link: "https://krishna-apps.vercel.app/",
+  },
 ];
 
 export const pliq = [

@@ -15,7 +15,7 @@ import Background from "components/Background";
 
 const Container = styled.div`
   background: #80422f44;
-  max-width: 820px;
+  max-width: 850px;
   margin: auto;
   margin-top: 40px;
   margin-bottom: 0;
@@ -24,7 +24,7 @@ const Container = styled.div`
     margin: 0;
   }
   @media print {
-    min-width: 820px;
+    min-width: 850px;
     svg {
       fill: black !important;
     }

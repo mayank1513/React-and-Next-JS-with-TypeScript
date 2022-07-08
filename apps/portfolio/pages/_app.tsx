@@ -66,6 +66,11 @@ export const globals = css`
       color: #fff;
       background-color: #17a2b8;
     }
+    @media print {
+      .calendly-badge-widget {
+        position: absolute !important;
+      }
+    }
   }
 `;
 

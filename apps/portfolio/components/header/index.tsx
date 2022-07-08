@@ -28,6 +28,7 @@ const StyledHeader = styled.div<{ r }>`
   .logo {
     padding: ${({ r }) => r * 5}px;
     img {
+      transition: all 0s;
       border-radius: ${({ r }) => r * 50}%;
       border: 1px solid green;
       filter: drop-shadow(1px 1px 3px yellowgreen);
@@ -77,8 +78,8 @@ export default function Header() {
     >
       <StyledHeader r={fraction}>
         <div className="logo">
-          <Image
-            src={logo}
+          <img
+            src="/logo.png"
             height={height - fraction * 10}
             width={height - fraction * 10}
           />
