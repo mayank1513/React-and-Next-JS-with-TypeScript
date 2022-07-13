@@ -78,7 +78,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Mayank Kumar Chaudhari Portfolio</title>
+        <title>Mayank Kumar Chaudhari</title>
         <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="X-UA-Compatible" content="IE=7" />
