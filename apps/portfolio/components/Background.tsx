@@ -9,22 +9,25 @@ const StyledBackground = styled.div`
   .bg {
     position: fixed;
     display: flex;
-    align-item: center;
+    align-items: center;
     justify-content: center;
     z-index: -100;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    overflow: hidden !important;
+    max-width: 100vw;
     video {
+      overflow: hidden !important;
       &.cover {
         position: fixed;
-        min-width: 100%;
-        min-height: 100%;
+        min-width: 100vw;
+        min-height: 100vh;
       }
       &.contain {
-        max-width: 100%;
-        max-height: 100%;
+        max-width: 100vw;
+        max-height: 100vh;
         z-index: 10;
       }
     }
@@ -66,7 +69,14 @@ export default function Background({ bg }) {
               className={`bg ${cls}`}
               style={{ opacity: bg == cls ? 1 : 0 }}
             >
-              <video autoPlay loop muted playsInline className="cover">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls={false}
+                className="cover"
+              >
                 <source src={`/${cls}.webm`} type="video/webm" />
                 <source src={`/${cls}.mp4`} type="video/mp4" />
               </video>
