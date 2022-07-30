@@ -17,7 +17,7 @@ export const profiles = [
   },
   {
     icon: "medium.svg",
-    link: "https://mayank-1513.medium.com/",
+    link: "https://mayank1513.medium.com/",
   },
   {
     icon: "udemy.svg",
