@@ -1,5 +1,5 @@
 ---
-url: https://mayank-1513.medium.com/jsx-syntactic-sugar-for-writing-react-c6b93b9d51b5
+url: https://mayank1513.medium.com/jsx-syntactic-sugar-for-writing-react-c6b93b9d51b5
 ---
 
 # JSX — Syntactic Sugar for Writing React
